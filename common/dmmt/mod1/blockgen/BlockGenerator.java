@@ -30,6 +30,7 @@ public class BlockGenerator implements IWorldGenerator {
 		
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
+<<<<<<< HEAD
 		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 10000, 100, 5, 128);
 		this.addOreSpawn(Basic.conglomerate, world, random, x, z, 16, 16, 64, 100, 5, 64);
 		this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 64, 100, 5, 64);
@@ -38,6 +39,16 @@ public class BlockGenerator implements IWorldGenerator {
 		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, 64, 100, 5, 64);
 		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 64, 100, 5, 64);
 		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 64, 100, 5, 64);
+=======
+		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.conglomerate, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.granite, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 64, 2, 5, 64);
+		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 64, 2, 5, 64);
+>>>>>>> 3f54070e46f368358940111ee624019dd02da181
 	}
 
 	private void generateNether(World world, Random random, int x, int z) {
