@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import dmmt.mod1.basic.Basic;
 import dmmt.mod1.basic.ModInfo;
 
 public class Andesite extends Block {
@@ -18,14 +19,11 @@ public class Andesite extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("andesite");
 		setCreativeTab(CreativeTabs.tabBlock);
-		
-		//CHANGE TO CORRECT TEXTURE
-		setTextureName(ModInfo.NAME.toLowerCase() + ":stone");
+		setTextureName(ModInfo.NAME.toLowerCase() + ":andesite");
 	}
 	
 	public int idDropped(int metadata, Random random, int fortune){
-		//CHANGE TO CORRECT DROPPED BLOCK
-		return Block.stone.blockID;
+		return Basic.andesite.blockID;
 	}
 
 }

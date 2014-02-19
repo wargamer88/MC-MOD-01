@@ -48,7 +48,14 @@ public class Basic {
                 proxy.registerRenderers();
                 
                 //gameregistry of stones
-                //GameRegistry.registerBlock(genericOre, "genericOre"); LanguageRegistry.addName(genericOre, "Generic Ore"); MinecraftForge.setBlockHarvestLevel(genericOre, "pickaxe", 3);
+                GameRegistry.registerBlock(andesite, "andesite"); LanguageRegistry.addName(andesite, "Andesite"); MinecraftForge.setBlockHarvestLevel(andesite, "pickaxe", 2);
+                GameRegistry.registerBlock(conglomerate, "conglomerate"); LanguageRegistry.addName(conglomerate, "Conglomerate"); MinecraftForge.setBlockHarvestLevel(conglomerate, "pickaxe", 2);
+                GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz"); LanguageRegistry.addName(dioriteQuartz, "Diorite Quartz"); MinecraftForge.setBlockHarvestLevel(dioriteQuartz, "pickaxe", 2);
+                GameRegistry.registerBlock(dolomite, "dolomite"); LanguageRegistry.addName(dolomite, "Dolomite"); MinecraftForge.setBlockHarvestLevel(dolomite, "pickaxe", 2);
+                GameRegistry.registerBlock(granite, "granite"); LanguageRegistry.addName(granite, "Granite"); MinecraftForge.setBlockHarvestLevel(granite, "pickaxe", 2);
+                GameRegistry.registerBlock(marble, "marble"); LanguageRegistry.addName(marble, "Marble"); MinecraftForge.setBlockHarvestLevel(marble, "pickaxe", 2);
+                GameRegistry.registerBlock(pumice, "pumice"); LanguageRegistry.addName(pumice, "pumice"); MinecraftForge.setBlockHarvestLevel(pumice, "pickaxe", 2);
+                GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
                 
         }
        
