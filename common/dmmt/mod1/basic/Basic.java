@@ -24,7 +24,7 @@ import dmmt.mod1.blocks.rawstones.Pumice;
 import dmmt.mod1.blocks.rawstones.Siltstone;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
-@NetworkMod(clientSideRequired=true, serverSideRequired=false)
+@NetworkMod(clientSideRequired=true, serverSideRequired=true)
 public class Basic {
  
 	//blocks
