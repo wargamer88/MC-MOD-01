@@ -3,8 +3,6 @@ package dmmt.mod1.basic;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.common.MinecraftForge;
-import dmmt.mod1.basic.CommonProxy;
-import dmmt.mod1.blocks.rawstones.*;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -15,6 +13,15 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import dmmt.mod1.blockgen.BlockGenerator;
+import dmmt.mod1.blocks.rawstones.Andesite;
+import dmmt.mod1.blocks.rawstones.Conglomerate;
+import dmmt.mod1.blocks.rawstones.DioriteQuartz;
+import dmmt.mod1.blocks.rawstones.Dolomite;
+import dmmt.mod1.blocks.rawstones.Granite;
+import dmmt.mod1.blocks.rawstones.Marble;
+import dmmt.mod1.blocks.rawstones.Pumice;
+import dmmt.mod1.blocks.rawstones.Siltstone;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
@@ -29,6 +36,9 @@ public class Basic {
     public final static Block marble = new Marble(505, Material.rock);
     public final static Block pumice = new Pumice(506, Material.rock);
     public final static Block siltstone = new Siltstone(507, Material.rock);
+    
+    //blockgenerator
+    BlockGenerator blockGenerator = new BlockGenerator();
 	
         // The instance of your mod that Forge uses.
         @Instance("Basic")
