@@ -18,7 +18,7 @@ public class DioriteQuartz extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("dioriteQuartz");
 		setCreativeTab(CreativeTabs.tabBlock);
-		setTextureName(ModInfo.NAME.toLowerCase() + ":dioriteQuartz");
+		setTextureName(ModInfo.NAME + ":dioriteQuartz");
 	}
 	
 	public int idDropped(int metadata, Random random, int fortune){
