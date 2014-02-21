@@ -18,7 +18,7 @@ import dmmt.mod1.blocks.rawstones.Andesite;
 import dmmt.mod1.blocks.rawstones.Conglomerate;
 import dmmt.mod1.blocks.rawstones.DioriteQuartz;
 import dmmt.mod1.blocks.rawstones.Dolomite;
-import dmmt.mod1.blocks.rawstones.Granite;
+import dmmt.mod1.blocks.rawstones.GreenGranite;
 import dmmt.mod1.blocks.rawstones.Marble;
 import dmmt.mod1.blocks.rawstones.Pumice;
 import dmmt.mod1.blocks.rawstones.Siltstone;
@@ -32,7 +32,7 @@ public class Basic {
     public final static Block conglomerate = new Conglomerate(501, Material.rock);
     public final static Block dioriteQuartz = new DioriteQuartz(502, Material.rock);
     public final static Block dolomite = new Dolomite(503, Material.rock);
-    public final static Block granite = new Granite(504, Material.rock);
+    public final static Block greenGranite = new GreenGranite(504, Material.rock);
     public final static Block marble = new Marble(505, Material.rock);
     public final static Block pumice = new Pumice(506, Material.rock);
     public final static Block siltstone = new Siltstone(507, Material.rock);
@@ -62,12 +62,15 @@ public class Basic {
                 GameRegistry.registerBlock(conglomerate, "conglomerate"); LanguageRegistry.addName(conglomerate, "Conglomerate"); MinecraftForge.setBlockHarvestLevel(conglomerate, "pickaxe", 2);
                 GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz"); LanguageRegistry.addName(dioriteQuartz, "Diorite Quartz"); MinecraftForge.setBlockHarvestLevel(dioriteQuartz, "pickaxe", 2);
                 GameRegistry.registerBlock(dolomite, "dolomite"); LanguageRegistry.addName(dolomite, "Dolomite"); MinecraftForge.setBlockHarvestLevel(dolomite, "pickaxe", 2);
-                GameRegistry.registerBlock(granite, "granite"); LanguageRegistry.addName(granite, "Granite"); MinecraftForge.setBlockHarvestLevel(granite, "pickaxe", 2);
+                GameRegistry.registerBlock(greenGranite, "greenGranite"); LanguageRegistry.addName(greenGranite, "Green Granite"); MinecraftForge.setBlockHarvestLevel(greenGranite, "pickaxe", 2);
                 GameRegistry.registerBlock(marble, "marble"); LanguageRegistry.addName(marble, "Marble"); MinecraftForge.setBlockHarvestLevel(marble, "pickaxe", 2);
                 GameRegistry.registerBlock(pumice, "pumice"); LanguageRegistry.addName(pumice, "pumice"); MinecraftForge.setBlockHarvestLevel(pumice, "pickaxe", 2);
                 GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
                 
+        
+                GameRegistry.registerWorldGenerator(blockGenerator);
         }
+        
        
         @EventHandler
         public void postInit(FMLPostInitializationEvent event) {

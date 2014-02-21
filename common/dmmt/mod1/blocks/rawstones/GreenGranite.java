@@ -8,21 +8,21 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 
-public class Granite extends Block {
+public class GreenGranite extends Block {
 
-	public Granite(int id, Material par2Material) {
+	public GreenGranite(int id, Material par2Material) {
 		super(id, par2Material);
 		
 		//CHANGE TO CORRECT HARDNESS
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
-		setUnlocalizedName("granite");
+		setUnlocalizedName("greenGranite");
 		setCreativeTab(CreativeTabs.tabBlock);
-		setTextureName(ModInfo.NAME.toLowerCase() + ":granite");
+		setTextureName(ModInfo.NAME.toLowerCase() + ":greenGranite");
 	}
 	
 	public int idDropped(int metadata, Random random, int fortune){
-		return Basic.granite.blockID;
+		return Basic.greenGranite.blockID;
 	}
 
 }
