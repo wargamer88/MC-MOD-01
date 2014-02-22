@@ -2,6 +2,7 @@ package dmmt.mod1.basic;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -69,6 +70,32 @@ public class Basic {
                 
         
                 GameRegistry.registerWorldGenerator(blockGenerator);
+                
+                
+                //Crafting Recipes
+                
+                /* Crafting Recipes Example
+                 * 
+                 * How to add one?
+                 * 
+                 * First you add the name above it what you are going to craft in a comment.
+                 * Like The First one under here.
+                 */
+                
+                //mossy cobblestone and stonebricks
+                
+                //first you devine what you are going to need for that recipe, like this
+                ItemStack mossyStack = new ItemStack(Block.cobblestoneMossy);
+                ItemStack mossyBrickStack = new ItemStack(Block.stoneBrick, 1, 1);
+                ItemStack cobbleStack = new ItemStack(Block.cobblestone);
+                ItemStack stoneBrickStack = new ItemStack(Block.stoneBrick);
+                ItemStack vineStack = new ItemStack(Block.vine);
+                
+                //Then the accual crafting recepi
+                GameRegistry.addShapelessRecipe(mossyStack,cobbleStack, vineStack);
+                GameRegistry.addShapelessRecipe(mossyBrickStack, stoneBrickStack, vineStack);
+                //that's it!
+                
         }
         
        
