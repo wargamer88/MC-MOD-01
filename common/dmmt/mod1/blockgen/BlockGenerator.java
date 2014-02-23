@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
@@ -28,6 +29,9 @@ public class BlockGenerator implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int x, int z) {
 		
+		//biome getter
+		BiomeGenBase biomeGenBase = world.getWorldChunkManager().getBiomeGenAt(x + 16 , z + 16);
+		
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
 		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 32, 1, 5, 64);
@@ -38,6 +42,11 @@ public class BlockGenerator implements IWorldGenerator {
 		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 32, 1, 5, 64);
+		
+		//add watermelonstone in specific biomes
+		if(biomeGenBase.biomeName == "ocean" || biomeGenBase.biomeName == "jungle" || biomeGenBase.biomeName == "jungleHills"){
+			this.addOreSpawn(Basic.watermelonStone, world, random, x, z, 16, 16, 5, 1, 5, 64);
+		}
 	}
 
 	private void generateNether(World world, Random random, int x, int z) {
