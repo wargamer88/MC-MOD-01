@@ -30,10 +30,11 @@ public class Basic {
     public final static Block marble = new Marble(505, Material.rock);
     public final static Block pumice = new Pumice(506, Material.rock);
     public final static Block siltstone = new Siltstone(507, Material.rock);
+    public final static Block diorite = new Diorite(508, Material.rock);
     
     //ores
-    public final static Block watermelonStone = new WatermelonStone(508, Material.rock);
-    public final static Block titaniumOre = new TitaniumOre(509, Material.rock);
+    public final static Block watermelonStone = new WatermelonStone(1000, Material.rock);
+    public final static Block titaniumOre = new TitaniumOre(1001, Material.rock);
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -55,6 +56,8 @@ public class Basic {
         public void load(FMLInitializationEvent event) {
                 proxy.registerRenderers();
                 
+                //setBlockHarvestLevel: 0=wood, 1=stone, 2=iron, 3=diamond
+                
                 //gameregistry of stones
                 GameRegistry.registerBlock(andesite, "andesite"); LanguageRegistry.addName(andesite, "Andesite"); MinecraftForge.setBlockHarvestLevel(andesite, "pickaxe", 2);
                 GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz"); LanguageRegistry.addName(dioriteQuartz, "Diorite Quartz"); MinecraftForge.setBlockHarvestLevel(dioriteQuartz, "pickaxe", 2);
@@ -63,6 +66,7 @@ public class Basic {
                 GameRegistry.registerBlock(marble, "marble"); LanguageRegistry.addName(marble, "Marble"); MinecraftForge.setBlockHarvestLevel(marble, "pickaxe", 2);
                 GameRegistry.registerBlock(pumice, "pumice"); LanguageRegistry.addName(pumice, "pumice"); MinecraftForge.setBlockHarvestLevel(pumice, "pickaxe", 2);
                 GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
+                GameRegistry.registerBlock(diorite, "diorite"); LanguageRegistry.addName(diorite, "Diorite"); MinecraftForge.setBlockHarvestLevel(diorite, "pickaxe", 3);
                 
                 //ores
                 GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
