@@ -24,7 +24,6 @@ public class Basic {
  
 	//blocks
     public final static Block andesite = new Andesite(500, Material.rock);
-    public final static Block conglomerate = new Conglomerate(501, Material.rock);
     public final static Block dioriteQuartz = new DioriteQuartz(502, Material.rock);
     public final static Block dolomite = new Dolomite(503, Material.rock);
     public final static Block greenGranite = new GreenGranite(504, Material.rock);
@@ -57,7 +56,6 @@ public class Basic {
                 
                 //gameregistry of stones
                 GameRegistry.registerBlock(andesite, "andesite"); LanguageRegistry.addName(andesite, "Andesite"); MinecraftForge.setBlockHarvestLevel(andesite, "pickaxe", 2);
-                GameRegistry.registerBlock(conglomerate, "conglomerate"); LanguageRegistry.addName(conglomerate, "Conglomerate"); MinecraftForge.setBlockHarvestLevel(conglomerate, "pickaxe", 2);
                 GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz"); LanguageRegistry.addName(dioriteQuartz, "Diorite Quartz"); MinecraftForge.setBlockHarvestLevel(dioriteQuartz, "pickaxe", 2);
                 GameRegistry.registerBlock(dolomite, "dolomite"); LanguageRegistry.addName(dolomite, "Dolomite"); MinecraftForge.setBlockHarvestLevel(dolomite, "pickaxe", 2);
                 GameRegistry.registerBlock(greenGranite, "greenGranite"); LanguageRegistry.addName(greenGranite, "Green Granite"); MinecraftForge.setBlockHarvestLevel(greenGranite, "pickaxe", 2);

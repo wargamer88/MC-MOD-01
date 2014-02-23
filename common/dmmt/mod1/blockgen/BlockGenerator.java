@@ -35,7 +35,6 @@ public class BlockGenerator implements IWorldGenerator {
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
 		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.conglomerate, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.greenGranite, world, random, x, z, 16, 16, 32, 1, 5, 64);
