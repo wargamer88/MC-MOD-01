@@ -19,7 +19,7 @@ import dmmt.mod1.blocks.rawstones.*;
 import dmmt.mod1.blocks.rawores.*;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
-@NetworkMod(clientSideRequired=true, serverSideRequired=true)
+@NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Basic {
  
 	//blocks
