@@ -45,7 +45,7 @@ public class BlockGenerator implements IWorldGenerator {
 		
 		//add watermelonstone in specific biomes
 		if(biomeGenBase.biomeName == "ocean" || biomeGenBase.biomeName == "jungle" || biomeGenBase.biomeName == "jungleHills"){
-			this.addOreSpawn(Basic.watermelonStone, world, random, x, z, 16, 16, 5, 1, 5, 64);
+			this.addOreSpawn(Basic.watermelonStone, world, random, x, z, 16, 16, 4, 3, 5, 256);
 		}
 	}
 
