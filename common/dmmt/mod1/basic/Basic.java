@@ -66,7 +66,7 @@ public class Basic {
                 GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
                 
                 //ores
-                GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Stone"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
+                GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
                 
         
                 GameRegistry.registerWorldGenerator(blockGenerator);

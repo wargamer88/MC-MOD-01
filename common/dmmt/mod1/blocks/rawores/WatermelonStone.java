@@ -19,7 +19,7 @@ public class WatermelonStone extends Block {
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("watermelonStone");
 		setCreativeTab(CreativeTabs.tabFood);
-		setTextureName(ModInfo.NAME.toLowerCase() + ":andesite");
+		setTextureName(ModInfo.NAME.toLowerCase() + ":melonstone");
 	}
 	
 	/**
