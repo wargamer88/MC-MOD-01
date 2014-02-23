@@ -15,14 +15,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import dmmt.mod1.blockgen.BlockGenerator;
-import dmmt.mod1.blocks.rawstones.Andesite;
-import dmmt.mod1.blocks.rawstones.Conglomerate;
-import dmmt.mod1.blocks.rawstones.DioriteQuartz;
-import dmmt.mod1.blocks.rawstones.Dolomite;
-import dmmt.mod1.blocks.rawstones.GreenGranite;
-import dmmt.mod1.blocks.rawstones.Marble;
-import dmmt.mod1.blocks.rawstones.Pumice;
-import dmmt.mod1.blocks.rawstones.Siltstone;
+import dmmt.mod1.blocks.rawstones.*;
+import dmmt.mod1.blocks.rawores.*;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
 @NetworkMod(clientSideRequired=true, serverSideRequired=true)
@@ -37,6 +31,9 @@ public class Basic {
     public final static Block marble = new Marble(505, Material.rock);
     public final static Block pumice = new Pumice(506, Material.rock);
     public final static Block siltstone = new Siltstone(507, Material.rock);
+    
+    //ores
+    public final static Block watermelonStone = new WatermelonStone(508, Material.rock);
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -67,6 +64,9 @@ public class Basic {
                 GameRegistry.registerBlock(marble, "marble"); LanguageRegistry.addName(marble, "Marble"); MinecraftForge.setBlockHarvestLevel(marble, "pickaxe", 2);
                 GameRegistry.registerBlock(pumice, "pumice"); LanguageRegistry.addName(pumice, "pumice"); MinecraftForge.setBlockHarvestLevel(pumice, "pickaxe", 2);
                 GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
+                
+                //ores
+                GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Stone"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
                 
         
                 GameRegistry.registerWorldGenerator(blockGenerator);
