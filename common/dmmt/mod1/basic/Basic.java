@@ -91,7 +91,7 @@ public class Basic {
                 ItemStack stoneBrickStack = new ItemStack(Block.stoneBrick);
                 ItemStack vineStack = new ItemStack(Block.vine);
                 
-                //Then the accual crafting recepi
+                //Then the actual crafting recipe
                 GameRegistry.addShapelessRecipe(mossyStack,cobbleStack, vineStack);
                 GameRegistry.addShapelessRecipe(mossyBrickStack, stoneBrickStack, vineStack);
                 //that's it!
