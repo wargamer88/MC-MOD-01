@@ -34,6 +34,7 @@ public class BlockGenerator implements IWorldGenerator {
 		
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
+		//add stones
 		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, 32, 1, 5, 64);
@@ -42,10 +43,15 @@ public class BlockGenerator implements IWorldGenerator {
 		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 32, 1, 5, 64);
 		
+		//add ores
+		this.addOreSpawn(Basic.titaniumOre, world, random, x, z, 16, 16, 8, 1, 3, 20);
+		
 		//add watermelonstone in specific biomes
 		if(biomeGenBase.biomeName == "ocean" || biomeGenBase.biomeName == "jungle" || biomeGenBase.biomeName == "jungleHills"){
 			this.addOreSpawn(Basic.watermelonStone, world, random, x, z, 16, 16, 4, 3, 5, 256);
 		}
+		
+		
 	}
 
 	private void generateNether(World world, Random random, int x, int z) {

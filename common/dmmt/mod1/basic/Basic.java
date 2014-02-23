@@ -33,6 +33,7 @@ public class Basic {
     
     //ores
     public final static Block watermelonStone = new WatermelonStone(508, Material.rock);
+    public final static Block titaniumOre = new TitaniumOre(509, Material.rock);
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -65,7 +66,7 @@ public class Basic {
                 
                 //ores
                 GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
-                
+                GameRegistry.registerBlock(titaniumOre, "titaniumOre"); LanguageRegistry.addName(titaniumOre, "Titanium Ore"); MinecraftForge.setBlockHarvestLevel(titaniumOre, "pickaxe", 3);
         
                 GameRegistry.registerWorldGenerator(blockGenerator);
                 
