@@ -35,13 +35,15 @@ public class BlockGenerator implements IWorldGenerator {
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
 		//add stones
-		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.greenGranite, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 32, 1, 5, 64);
-		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 32, 1, 5, 64);
+		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
+		if(biomeGenBase.biomeName == "taigaHills" || biomeGenBase.biomeName == "jungleHills" || biomeGenBase.biomeName == "desertHills" || biomeGenBase.biomeName == "extremeHills" || biomeGenBase.biomeName == "forestHills" || biomeGenBase.biomeName == "iceMountains" || biomeGenBase.biomeName == "mushroomIsland" || biomeGenBase.biomeName == "mushroomIslandShore"){
+			this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
+		}		
+		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
+		this.addOreSpawn(Basic.greenGranite, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
+		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
+		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
+		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 64);
 		
 		//add ores
 		this.addOreSpawn(Basic.titaniumOre, world, random, x, z, 16, 16, 8, 1, 3, 20);
@@ -90,6 +92,14 @@ public class BlockGenerator implements IWorldGenerator {
                  int posZ = blockZPos + random.nextInt(maxZ);
                  (new WorldGenMinable(block.blockID, maxVeinSize)).generate(world, random, posX, posY, posZ);
           }
+    }
+    
+    public int chanceToSpawn(int max, int min, Random random){
+    	if(random.nextInt(max) < min){
+    		return 1;
+    	} else {
+    		return 0;
+    	}
     }
 
 }
