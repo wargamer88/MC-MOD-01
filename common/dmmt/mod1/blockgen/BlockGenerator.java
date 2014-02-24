@@ -35,22 +35,24 @@ public class BlockGenerator implements IWorldGenerator {
 		//addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY)
 		
 		//add stones
-		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 256);
+		int veinsize = 256;
+		
+		this.addOreSpawn(Basic.andesite, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 5, 255);
 		if(biomeGenBase.biomeName == "taigaHills" || biomeGenBase.biomeName == "jungleHills" || biomeGenBase.biomeName == "desertHills" || biomeGenBase.biomeName == "extremeHills" || biomeGenBase.biomeName == "forestHills" || biomeGenBase.biomeName == "iceMountains" || biomeGenBase.biomeName == "mushroomIsland" || biomeGenBase.biomeName == "mushroomIslandShore"){
-			this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 256);
+			this.addOreSpawn(Basic.dioriteQuartz, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 5, 255);
 		}		
-		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 256);
-		this.addOreSpawn(Basic.greenGranite, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 20, 64);
-		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 5, 45);
-		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 40, 256);
-		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, 256, chanceToSpawn(100, 40, random), 25, 60);
+		this.addOreSpawn(Basic.dolomite, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 5, 255);
+		this.addOreSpawn(Basic.greenGranite, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 20, 64);
+		this.addOreSpawn(Basic.marble, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 5, 45);
+		this.addOreSpawn(Basic.pumice, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 40, 255);
+		this.addOreSpawn(Basic.siltstone, world, random, x, z, 16, 16, veinsize, chanceToSpawn(100, 40, random), 25, 60);
 		
 		//add ores
 		this.addOreSpawn(Basic.titaniumOre, world, random, x, z, 16, 16, 8, 1, 3, 20);
 		
 		//add watermelonstone in specific biomes
 		if(biomeGenBase.biomeName == "ocean" || biomeGenBase.biomeName == "jungle" || biomeGenBase.biomeName == "jungleHills"){
-			this.addOreSpawn(Basic.watermelonStone, world, random, x, z, 16, 16, 4, 3, 5, 256);
+			this.addOreSpawn(Basic.watermelonStone, world, random, x, z, 16, 16, 4, 3, 5, 255);
 		}
 		
 		
