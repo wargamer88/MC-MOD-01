@@ -17,7 +17,7 @@ public class GreenGranite extends Block {
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("greenGranite");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":greenGranite");
 	}
 	

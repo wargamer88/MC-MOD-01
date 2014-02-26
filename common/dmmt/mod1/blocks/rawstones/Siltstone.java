@@ -17,7 +17,7 @@ public class Siltstone extends Block {
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("siltstone");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":siltstone");
 	}
 	

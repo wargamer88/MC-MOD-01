@@ -17,7 +17,7 @@ public class Dolomite extends Block {
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("dolomite");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":dolomite");
 	}
 	

@@ -17,7 +17,7 @@ public class Pumice extends Block {
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("pumice");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":pumice");
 	}
 	

@@ -17,7 +17,7 @@ public class Marble extends Block {
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("marble");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":marble");
 	}
 	

@@ -17,7 +17,7 @@ public class DioriteQuartz extends Block {
 		setHardness(4.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("dioriteQuartz");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME + ":dioriteQuartz");
 	}
 	

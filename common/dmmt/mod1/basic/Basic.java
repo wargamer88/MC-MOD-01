@@ -2,9 +2,11 @@ package dmmt.mod1.basic;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -26,6 +28,10 @@ import dmmt.mod1.blocks.rawstones.GreenGranite;
 import dmmt.mod1.blocks.rawstones.Marble;
 import dmmt.mod1.blocks.rawstones.Pumice;
 import dmmt.mod1.blocks.rawstones.Siltstone;
+import dmmt.mod1.creativetabs.tabDPBlocks;
+import dmmt.mod1.creativetabs.tabDPItems;
+import dmmt.mod1.creativetabs.placeholders.BlocksPlace;
+import dmmt.mod1.creativetabs.placeholders.ItemsPlace;
 import dmmt.mod1.item.IronChain;
 import dmmt.mod1.item.IronChandelier;
 import dmmt.mod1.item.IronNugget;
@@ -34,6 +40,13 @@ import dmmt.mod1.item.IronNugget;
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 public class Basic {
  
+	//creative tabs
+    public static CreativeTabs tabDPBlocks = new tabDPBlocks(CreativeTabs.getNextID(), "tabDPBlocks");
+    public static CreativeTabs tabDPItems = new tabDPItems(CreativeTabs.getNextID(), "tabDPItems");
+    //Creative Tabs Placeholders
+    public final static Item ItemsPlace = new ItemsPlace(1600);
+    public final static Item BlocksPlace = new BlocksPlace(1601);
+	
 	//blocks
     public final static Block andesite = new Andesite(500, Material.rock);
     public final static Block dioriteQuartz = new DioriteQuartz(502, Material.rock);
@@ -49,9 +62,10 @@ public class Basic {
     public final static Block titaniumOre = new TitaniumOre(1001, Material.rock);
     
     //items
-    private final static Item ironNugget = new IronNugget(1500);
-    private final static Item ironChain = new IronChain(1501);
-    private final static Item ironChandelier = new IronChandelier(1502);
+    public final static Item ironNugget = new IronNugget(1500);
+    public final static Item ironChain = new IronChain(1501);
+    public final static Item ironChandelier = new IronChandelier(1502);
+    
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -94,8 +108,12 @@ public class Basic {
                 GameRegistry.registerItem(ironChain, "ironChain"); LanguageRegistry.addName(ironChain, "Iron Chain");
                 GameRegistry.registerItem(ironChandelier, "ironChandelier"); LanguageRegistry.addName(ironChandelier, "Iron Chandelier");
                 
+                //world Gen
                 GameRegistry.registerWorldGenerator(blockGenerator);
                 
+                //Creative Tabs Placeholders
+                GameRegistry.registerItem(ItemsPlace, "ItemsPlace");
+                GameRegistry.registerItem(BlocksPlace, "BlocksPlace");
                 
                 //Crafting Recipes
                 
@@ -141,8 +159,11 @@ public class Basic {
                 
                 GameRegistry.addRecipe(ironChandelier, "aba", "cdc", " c ", 'a', ironChain, 'b', flint, 'c', iron, 'd', coal);
                 
+                //Ingame Names Creative Tabs
+                LanguageRegistry.instance().addStringLocalization("itemGroup.tabDPBlocks", "en_US", "Dutch Power Blocks");
+                LanguageRegistry.instance().addStringLocalization("itemGroup.tabDPItems", "en_US", "Dutch Power Items");
                 
-                
+                oreRegistration();
                 
         }
         
@@ -150,6 +171,11 @@ public class Basic {
         @EventHandler
         public void postInit(FMLPostInitializationEvent event) {
                 // Stub Method
+        }
+        
+        public static void oreRegistration()
+        {
+                OreDictionary.registerOre("nuggetIron", new ItemStack(ironNugget));
         }
        
 }

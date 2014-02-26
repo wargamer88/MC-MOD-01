@@ -18,7 +18,7 @@ public class WatermelonStone extends Block {
 		
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("watermelonStone");
-		setCreativeTab(CreativeTabs.tabFood);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":melonstone");
 	}
 	

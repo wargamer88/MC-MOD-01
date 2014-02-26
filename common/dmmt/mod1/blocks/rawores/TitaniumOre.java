@@ -17,7 +17,7 @@ public class TitaniumOre extends Block {
 		setHardness(5.0F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("titaniumOre");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":titaniumOre");
 	}
 	

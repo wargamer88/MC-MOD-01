@@ -18,7 +18,7 @@ public class Andesite extends Block {
 		
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("andesite");
-		setCreativeTab(CreativeTabs.tabBlock);
+		setCreativeTab(Basic.tabDPBlocks);
 		setTextureName(ModInfo.NAME.toLowerCase() + ":andesite");
 	}
 	
