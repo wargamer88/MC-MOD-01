@@ -14,7 +14,7 @@ public class Marble extends Block {
 		super(id, par2Material);
 		
 		//CHANGE TO CORRECT HARDNESS
-		setHardness(4.0F);
+		setHardness(1.25F);
 		setStepSound(Block.soundStoneFootstep);
 		setUnlocalizedName("marble");
 		setCreativeTab(Basic.tabDPBlocks);
