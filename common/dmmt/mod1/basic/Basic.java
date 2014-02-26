@@ -18,6 +18,8 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import dmmt.mod1.blockgen.BlockGenerator;
+import dmmt.mod1.blockgen.TreeManager;
+import dmmt.mod1.blocks.leave.MorningLeaf;
 import dmmt.mod1.blocks.rawores.TitaniumOre;
 import dmmt.mod1.blocks.rawores.ZirconiumOre;
 import dmmt.mod1.blocks.rawores.WatermelonStone;
@@ -29,6 +31,7 @@ import dmmt.mod1.blocks.rawstones.GreenGranite;
 import dmmt.mod1.blocks.rawstones.Marble;
 import dmmt.mod1.blocks.rawstones.Pumice;
 import dmmt.mod1.blocks.rawstones.Siltstone;
+import dmmt.mod1.blocks.wood.MorningWood;
 import dmmt.mod1.creativetabs.tabDPBlocks;
 import dmmt.mod1.creativetabs.tabDPItems;
 import dmmt.mod1.creativetabs.placeholders.BlocksPlace;
@@ -61,6 +64,12 @@ public class Basic {
     public final static Block siltstone = new Siltstone(507, Material.rock);
     public final static Block diorite = new Diorite(508, Material.rock);
     
+    //woods
+    public final static Block morningWood = new MorningWood(600, Material.wood);
+    
+    //leaves
+    public final static Block morningLeaf = new MorningLeaf(700, Material.leaves, true);
+    
     //ores
     public final static Block watermelonStone = new WatermelonStone(1000, Material.rock);
     public final static Block titaniumOre = new TitaniumOre(1001, Material.rock);
@@ -77,6 +86,9 @@ public class Basic {
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
+    
+    TreeManager treeManager = new TreeManager();
+
 	
         // The instance of your mod that Forge uses.
         @Instance("Basic")
@@ -124,6 +136,12 @@ public class Basic {
             GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
             GameRegistry.registerBlock(diorite, "diorite"); LanguageRegistry.addName(diorite, "Diorite"); MinecraftForge.setBlockHarvestLevel(diorite, "pickaxe", 3);
             
+            //wood
+            GameRegistry.registerBlock(morningWood, "morningWood"); LanguageRegistry.addName(morningWood, "Morning Wood"); MinecraftForge.setBlockHarvestLevel(morningWood, "axe", 3);
+
+            //leaves
+            GameRegistry.registerBlock(morningLeaf, "morningLeaf"); LanguageRegistry.addName(morningLeaf, "Morning Leaf"); MinecraftForge.setBlockHarvestLevel(morningLeaf, "shear", 3);
+            
             //ores
             GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
             GameRegistry.registerBlock(titaniumOre, "titaniumOre"); LanguageRegistry.addName(titaniumOre, "Titanium Ore"); MinecraftForge.setBlockHarvestLevel(titaniumOre, "pickaxe", 3);
@@ -139,6 +157,9 @@ public class Basic {
             
             //world Gen
             GameRegistry.registerWorldGenerator(blockGenerator);
+            GameRegistry.registerWorldGenerator(treeManager);
+            
+            
             
             //Creative Tabs Placeholders
             GameRegistry.registerItem(ItemsPlace, "ItemsPlace");
