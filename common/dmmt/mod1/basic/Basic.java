@@ -1,11 +1,15 @@
 package dmmt.mod1.basic;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -19,6 +23,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import dmmt.mod1.blockgen.BlockGenerator;
 import dmmt.mod1.blockgen.TreeManager;
+import dmmt.mod1.blocks.fluids.BlockOilFluid;
 import dmmt.mod1.blocks.leave.MorningLeaf;
 import dmmt.mod1.blocks.rawores.TitaniumOre;
 import dmmt.mod1.blocks.rawores.WatermelonStone;
@@ -55,6 +60,12 @@ public class Basic {
     public final static Item ItemsPlace = new ItemsPlace(1600);
     public final static Item BlocksPlace = new BlocksPlace(1601);
 	
+    //Fluid
+    public static Block blockOilFluid;
+    
+    //Id's
+    public static final int idFluidOil = 200;
+    
 	//blocks
     public final static Block andesite = new Andesite(500, Material.rock);
     public final static Block dioriteQuartz = new DioriteQuartz(502, Material.rock);
@@ -84,6 +95,12 @@ public class Basic {
     public final static Item goldChandelier = new GoldChandelier(1504);
     public final static Item miniFlintAndSteel = new MiniFlintAndSteel(1505);
     public final static Item chainmailPlate = new ChainmailPlate(1506);
+    
+    //fluid
+    public static Fluid fluidOil;
+    
+    //Material
+    public static Material materialOil;
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -127,6 +144,16 @@ public class Basic {
         public void gameRegistry(){
         	//setBlockHarvestLevel: 0=wood, 1=stone, 2=iron, 3=diamond
             
+        	//fluids setup
+        	fluidOil = new Fluid("oil").setBlockID(idFluidOil);
+            FluidRegistry.registerFluid(fluidOil);
+            
+            //Material
+            materialOil = new MaterialLiquid(MapColor.waterColor);
+            
+            //Fluids
+            blockOilFluid = new BlockOilFluid(idFluidOil).setUnlocalizedName("fluid_iron").setTextureName(ModInfo.NAME.toLowerCase() + ":fluidOil");
+               
             //gameregistry of stones
             GameRegistry.registerBlock(andesite, "andesite"); LanguageRegistry.addName(andesite, "Andesite"); MinecraftForge.setBlockHarvestLevel(andesite, "pickaxe", 2);
             GameRegistry.registerBlock(dioriteQuartz, "dioriteQuartz"); LanguageRegistry.addName(dioriteQuartz, "Diorite Quartz"); MinecraftForge.setBlockHarvestLevel(dioriteQuartz, "pickaxe", 2);
@@ -136,6 +163,9 @@ public class Basic {
             GameRegistry.registerBlock(pumice, "pumice"); LanguageRegistry.addName(pumice, "pumice"); MinecraftForge.setBlockHarvestLevel(pumice, "pickaxe", 2);
             GameRegistry.registerBlock(siltstone, "siltstone"); LanguageRegistry.addName(siltstone, "Siltstone"); MinecraftForge.setBlockHarvestLevel(siltstone, "pickaxe", 2);
             GameRegistry.registerBlock(diorite, "diorite"); LanguageRegistry.addName(diorite, "Diorite"); MinecraftForge.setBlockHarvestLevel(diorite, "pickaxe", 3);
+            
+            //fluids
+            GameRegistry.registerBlock(blockOilFluid, "Oil");
             
             //wood
             GameRegistry.registerBlock(morningWood, "morningWood"); LanguageRegistry.addName(morningWood, "Morning Wood"); MinecraftForge.setBlockHarvestLevel(morningWood, "axe", 3);
