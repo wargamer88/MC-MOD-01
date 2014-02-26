@@ -21,8 +21,8 @@ import dmmt.mod1.blockgen.BlockGenerator;
 import dmmt.mod1.blockgen.TreeManager;
 import dmmt.mod1.blocks.leave.MorningLeaf;
 import dmmt.mod1.blocks.rawores.TitaniumOre;
-import dmmt.mod1.blocks.rawores.ZirconiumOre;
 import dmmt.mod1.blocks.rawores.WatermelonStone;
+import dmmt.mod1.blocks.rawores.ZirconiumOre;
 import dmmt.mod1.blocks.rawstones.Andesite;
 import dmmt.mod1.blocks.rawstones.Diorite;
 import dmmt.mod1.blocks.rawstones.DioriteQuartz;
@@ -36,6 +36,7 @@ import dmmt.mod1.creativetabs.tabDPBlocks;
 import dmmt.mod1.creativetabs.tabDPItems;
 import dmmt.mod1.creativetabs.placeholders.BlocksPlace;
 import dmmt.mod1.creativetabs.placeholders.ItemsPlace;
+import dmmt.mod1.item.ChainmailPlate;
 import dmmt.mod1.item.GoldChain;
 import dmmt.mod1.item.GoldChandelier;
 import dmmt.mod1.item.IronChain;
@@ -82,7 +83,7 @@ public class Basic {
     public final static Item goldChain = new GoldChain(1503);
     public final static Item goldChandelier = new GoldChandelier(1504);
     public final static Item miniFlintAndSteel = new MiniFlintAndSteel(1505);
-    
+    public final static Item chainmailPlate = new ChainmailPlate(1506);
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -154,6 +155,7 @@ public class Basic {
             GameRegistry.registerItem(goldChain, "goldChain"); LanguageRegistry.addName(goldChain, "Gold Chain");
             GameRegistry.registerItem(goldChandelier, "goldChandelier"); LanguageRegistry.addName(goldChandelier, "Gold Chandelier");
             GameRegistry.registerItem(miniFlintAndSteel, "miniFlintAndSteel"); LanguageRegistry.addName(miniFlintAndSteel, "Mini Flint and Steel");
+            GameRegistry.registerItem(chainmailPlate, "chainmailPlate"); LanguageRegistry.addName(chainmailPlate, "Chainmail Plate");
             
             //world Gen
             GameRegistry.registerWorldGenerator(blockGenerator);
@@ -173,53 +175,61 @@ public class Basic {
             ItemStack cobbleStack = new ItemStack(Block.cobblestone);
             ItemStack stoneBrickStack = new ItemStack(Block.stoneBrick);
             ItemStack vineStack = new ItemStack(Block.vine);
-            
             GameRegistry.addShapelessRecipe(mossyStack,cobbleStack, vineStack);
             GameRegistry.addShapelessRecipe(mossyBrickStack, stoneBrickStack, vineStack);
             
             //9 iron nuggets
             ItemStack iron = new ItemStack(Item.ingotIron);
             ItemStack ironNuggetStack9 = new ItemStack(this.ironNugget, 9);
-            
             GameRegistry.addRecipe(iron, "xxx", "xxx", "xxx", 'x', ironNuggetStack9);
             GameRegistry.addShapelessRecipe(ironNuggetStack9, iron);
             
             //1 iron chain
             ItemStack ironNugget = new ItemStack(this.ironNugget);
             ItemStack ironChain = new ItemStack(this.ironChain);
-            
             GameRegistry.addRecipe(ironChain, " x ", "x x", " x ", 'x', ironNugget);
             
             //1 mini flint and steel
             ItemStack miniFlintAndSteel = new ItemStack(this.miniFlintAndSteel);
             ItemStack flint = new ItemStack(Item.flint);
-            
             GameRegistry.addRecipe(miniFlintAndSteel, "x ", " y", 'x', ironNugget, 'y', flint);
             
             //1 chandelier
             ItemStack coal = new ItemStack(Item.coal);
             ItemStack flintAndSteel = new ItemStack(Item.flintAndSteel);
             ItemStack ironChandelier = new ItemStack(this.ironChandelier);
-            
             GameRegistry.addRecipe(ironChandelier, "aba", "cdc", " c ", 'a', ironChain, 'b', miniFlintAndSteel, 'c', iron, 'd', coal);
             
             //9 gold nuggets
             ItemStack gold = new ItemStack(Item.ingotGold);
             ItemStack goldNuggetStack9 = new ItemStack(Item.goldNugget, 9);
-            
             GameRegistry.addShapelessRecipe(goldNuggetStack9, gold);
             GameRegistry.addRecipe(gold, "xxx", "xxx", "xxx", 'x', goldNuggetStack9 );
             
             //1 gold chain
             ItemStack goldNugget = new ItemStack(Item.goldNugget);
             ItemStack goldChain = new ItemStack(this.goldChain);
-            
             GameRegistry.addRecipe(goldChain, "xxx", "x x", "xxx", 'x', goldNugget);
             
             //1 gold chandelier
             ItemStack goldChandelier = new ItemStack(this.goldChandelier);
-            
             GameRegistry.addRecipe(goldChandelier, "aba", "cdc", " c ", 'a', goldChain, 'b', miniFlintAndSteel, 'c', gold, 'd', coal);
+            
+            //1 chainmail plate
+            ItemStack chainmailPlate = new ItemStack(this.chainmailPlate);
+            GameRegistry.addRecipe(chainmailPlate, "x", "x", 'x', ironChain);
+            //1 chainmail chestplate
+            ItemStack chainmailChestplate = new ItemStack(Item.plateChain);
+            GameRegistry.addRecipe(chainmailChestplate, "x x", "xxx", "xxx", 'x', chainmailPlate);
+            //1 chainmail pants
+            ItemStack chainmailPants = new ItemStack(Item.legsChain);;
+            GameRegistry.addRecipe(chainmailPants, "xxx", "x x", "x x", 'x', chainmailPlate);
+            //1 chainmail helmet
+            ItemStack chainmailHelmet = new ItemStack(Item.helmetChain);;
+            GameRegistry.addRecipe(chainmailHelmet, "xxx", "x x", 'x', chainmailPlate);
+            //1 chainmail boots
+            ItemStack chainmailBoots = new ItemStack(Item.bootsChain);;
+            GameRegistry.addRecipe(chainmailBoots, "x x", "x x", 'x', chainmailPlate);
         }
         
         public static void oreRegistration()
