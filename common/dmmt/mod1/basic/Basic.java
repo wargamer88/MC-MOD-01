@@ -2,6 +2,7 @@ package dmmt.mod1.basic;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
@@ -15,8 +16,19 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import dmmt.mod1.blockgen.BlockGenerator;
-import dmmt.mod1.blocks.rawstones.*;
-import dmmt.mod1.blocks.rawores.*;
+import dmmt.mod1.blocks.rawores.TitaniumOre;
+import dmmt.mod1.blocks.rawores.WatermelonStone;
+import dmmt.mod1.blocks.rawstones.Andesite;
+import dmmt.mod1.blocks.rawstones.Diorite;
+import dmmt.mod1.blocks.rawstones.DioriteQuartz;
+import dmmt.mod1.blocks.rawstones.Dolomite;
+import dmmt.mod1.blocks.rawstones.GreenGranite;
+import dmmt.mod1.blocks.rawstones.Marble;
+import dmmt.mod1.blocks.rawstones.Pumice;
+import dmmt.mod1.blocks.rawstones.Siltstone;
+import dmmt.mod1.item.IronChain;
+import dmmt.mod1.item.IronChandelier;
+import dmmt.mod1.item.IronNugget;
  
 @Mod(modid=ModInfo.ID, name=ModInfo.NAME, version=ModInfo.VERSION)
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
@@ -35,6 +47,11 @@ public class Basic {
     //ores
     public final static Block watermelonStone = new WatermelonStone(1000, Material.rock);
     public final static Block titaniumOre = new TitaniumOre(1001, Material.rock);
+    
+    //items
+    private final static Item ironNugget = new IronNugget(1500);
+    private final static Item ironChain = new IronChain(1501);
+    private final static Item ironChandelier = new IronChandelier(1502);
     
     //blockgenerator
     BlockGenerator blockGenerator = new BlockGenerator();
@@ -72,6 +89,11 @@ public class Basic {
                 GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
                 GameRegistry.registerBlock(titaniumOre, "titaniumOre"); LanguageRegistry.addName(titaniumOre, "Titanium Ore"); MinecraftForge.setBlockHarvestLevel(titaniumOre, "pickaxe", 3);
         
+                //items
+                GameRegistry.registerItem(ironNugget, "ironNugget"); LanguageRegistry.addName(ironNugget, "Iron Nugget");
+                GameRegistry.registerItem(ironChain, "ironChain"); LanguageRegistry.addName(ironChain, "Iron Chain");
+                GameRegistry.registerItem(ironChandelier, "ironChandelier"); LanguageRegistry.addName(ironChandelier, "Iron Chandelier");
+                
                 GameRegistry.registerWorldGenerator(blockGenerator);
                 
                 
@@ -98,6 +120,29 @@ public class Basic {
                 GameRegistry.addShapelessRecipe(mossyStack,cobbleStack, vineStack);
                 GameRegistry.addShapelessRecipe(mossyBrickStack, stoneBrickStack, vineStack);
                 //that's it!
+                
+                
+                //9 iron nuggets
+                ItemStack iron = new ItemStack(Item.ingotIron);
+                ItemStack ironNuggetStack9 = new ItemStack(this.ironNugget, 9);
+                
+                GameRegistry.addShapelessRecipe(ironNuggetStack9, iron);
+                
+                //1 iron chain
+                ItemStack ironNugget = new ItemStack(this.ironNugget);
+                ItemStack ironChain = new ItemStack(this.ironChain);
+                
+                GameRegistry.addRecipe(ironChain, " x ", "x x", " x ", 'x', ironNugget);
+                
+                //1 chandelier
+                ItemStack coal = new ItemStack(Item.coal);
+                ItemStack flint = new ItemStack(Item.flint);
+                ItemStack ironChandelier = new ItemStack(this.ironChandelier);
+                
+                GameRegistry.addRecipe(ironChandelier, "aba", "cdc", " c ", 'a', ironChain, 'b', flint, 'c', iron, 'd', coal);
+                
+                
+                
                 
         }
         
