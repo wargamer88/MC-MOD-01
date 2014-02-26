@@ -49,6 +49,7 @@ public class BlockGenerator implements IWorldGenerator {
 		
 		//add ores
 		this.addOreSpawn(Basic.titaniumOre, world, random, x, z, 16, 16, 8, 1, 3, 20);
+		this.addOreSpawn(Basic.zirconiumOre, world, random, x, z, 16, 16, 8, 1, 3, 20);
 		
 		//add watermelonstone in specific biomes
 		if(biomeGenBase.biomeName == "ocean" || biomeGenBase.biomeName == "jungle" || biomeGenBase.biomeName == "jungleHills"){
