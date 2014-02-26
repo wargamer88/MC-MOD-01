@@ -19,6 +19,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import dmmt.mod1.blockgen.BlockGenerator;
 import dmmt.mod1.blocks.rawores.TitaniumOre;
+import dmmt.mod1.blocks.rawores.ZirconiumOre;
 import dmmt.mod1.blocks.rawores.WatermelonStone;
 import dmmt.mod1.blocks.rawstones.Andesite;
 import dmmt.mod1.blocks.rawstones.Diorite;
@@ -63,6 +64,7 @@ public class Basic {
     //ores
     public final static Block watermelonStone = new WatermelonStone(1000, Material.rock);
     public final static Block titaniumOre = new TitaniumOre(1001, Material.rock);
+    public final static Block zirconiumOre = new ZirconiumOre(1002, Material.rock);
     
     //items
     public final static Item ironNugget = new IronNugget(1500);
@@ -125,7 +127,8 @@ public class Basic {
             //ores
             GameRegistry.registerBlock(watermelonStone, "watermelonStone"); LanguageRegistry.addName(watermelonStone, "Watermelon Ore"); MinecraftForge.setBlockHarvestLevel(watermelonStone, "pickaxe", 2);
             GameRegistry.registerBlock(titaniumOre, "titaniumOre"); LanguageRegistry.addName(titaniumOre, "Titanium Ore"); MinecraftForge.setBlockHarvestLevel(titaniumOre, "pickaxe", 3);
-    
+            GameRegistry.registerBlock(zirconiumOre, "zirconiumOre"); LanguageRegistry.addName(zirconiumOre, "Zirconium Ore"); MinecraftForge.setBlockHarvestLevel(zirconiumOre, "pickaxe", 3);
+            
             //items
             GameRegistry.registerItem(ironNugget, "ironNugget"); LanguageRegistry.addName(ironNugget, "Iron Nugget");
             GameRegistry.registerItem(ironChain, "ironChain"); LanguageRegistry.addName(ironChain, "Iron Chain");
